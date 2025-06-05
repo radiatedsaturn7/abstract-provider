@@ -1,0 +1,23 @@
+ - [x] Implement AWS network resource (VPC creation, subnets, gateway)
+- [x] Implement AWS instance resource using EC2
+- [x] Implement AWS cluster resource using EKS
+- [x] Implement AWS function resource using Lambda
+- [x] Implement AWS database resource using RDS
+ - [x] Implement Azure bucket resource with Blob Storage
+- [x] Implement Azure network resource with VNet
+ - [x] Implement Azure instance resource with VM
+- [x] Implement Azure cluster resource with AKS
+ - [x] Implement Azure function resource
+ - [x] Implement Azure database resource
+- [x] Implement GCP bucket resource with GCS
+- [x] Implement GCP network resource with VPC
+ - [x] Implement GCP instance resource with Compute Engine
+ - [x] Implement GCP cluster resource with GKE
+- [x] Implement GCP function resource with Cloud Functions
+ - [x] Implement GCP database resource with Cloud SQL
+ - [x] Add provider configuration for Azure and GCP credentials
+- [x] Write integration tests for AWS bucket
+- [x] Map generic instance sizes (small/medium/large) to cloud-specific machine types
+- [x] Add GitHub Actions workflow to build provider
+
+- [x] Add setup script to install Go module dependencies for local testing
