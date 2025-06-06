@@ -38,7 +38,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.5
 	github.com/hashicorp/terraform-plugin-framework v1.15.0
 	github.com/hashicorp/terraform-plugin-testing v1.13.1
-	google.golang.org/api v0.232.0
+	google.golang.org/api v0.236.0
 )
 
 require (
