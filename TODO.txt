@@ -6,6 +6,7 @@
 - [x] Pin go.opentelemetry packages and golang.org/x/time to accessible versions
   - versions pinned; `go mod tidy` downloads succeed
 - [ ] Vendor blocked dependencies to avoid future download issues
+  - second attempt still fails with 403 errors fetching google.golang.org/api and github.com/hashicorp/hc-install during vendoring
   - attempted `go mod vendor` but downloads failed for google.golang.org/api, github.com/hashicorp/hc-install, dario.cat/mergo, and gopkg.in/warnings.v0
  - [x] Implement AWS network resource (VPC creation, subnets, gateway)
 - [x] Implement AWS instance resource using EC2
@@ -49,13 +50,21 @@
  - [ ] Add autoscaling configuration options for abstract_cluster resource
  - [ ] Integrate Vault for managing sensitive secrets
 - [ ] Add VPC/VNet integration options for abstract_function
+- [ ] Add trigger_http option for abstract_function to enable HTTP endpoints
+- [ ] Implement automatic upload of large function packages via cloud storage
+- [ ] Document default firewall rules created for networks and instances
 - [ ] Document usage of "annotations" map for provider-specific options
 - [ ] Add hybrid multi-cloud deployment example to README
 - [ ] Add versioning and encryption options for abstract_bucket resources
+- [ ] Add force_destroy annotation for abstract_bucket to delete non-empty buckets
 - [ ] Document cross-cloud naming requirements for resources
 - [ ] Document packaging process for abstract_function code
 - [ ] Document provider configuration with environment variables and default region settings
 - [ ] Document automatic resource group and network creation defaults
+- [ ] Add advanced network configuration options (multiple subnets, peering)
+- [ ] Add network integration options for abstract_database
+- [ ] Support custom IAM roles/service accounts for functions and clusters
+- [ ] Provide unified kubeconfig output for abstract_cluster
 - [ ] Add integration tests for network and function resources
 - [ ] Document provider versioning and release process
 - [x] Ensure `go mod tidy` works; if it fails, fix dependencies and commit progress
@@ -64,3 +73,4 @@
 - [ ] Ensure `go test ./...` works; fix test or dependency issues before other tasks
   - blocked module prevents successful test run
   - `go test` fails with missing go.sum entries for github.com/hashicorp/hc-install
+  - also fails to download google.golang.org/api due to 403 errors
