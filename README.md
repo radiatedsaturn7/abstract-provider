@@ -14,7 +14,7 @@ networks, instances, clusters, Cloud Functions, and Cloud SQL databases.
 
 ## Building
 
-Before building or testing, run `scripts/setup.sh` to download Go module dependencies.
+Before building or testing, run `scripts/setup.sh` to download Go module dependencies. This script respects the `GOPROXY` environment variable, so you can point it at an alternate module proxy if the default `proxy.golang.org` is blocked. If module downloads continue to fail, fetch them on a machine with access and commit the resulting `vendor` directory.
 
 
 ```
@@ -48,3 +48,11 @@ cloud:
 
 You can still provide a cloud-specific instance type directly by specifying the
 exact value in the `size` field.
+
+### Naming requirements
+
+Resource names must satisfy the strictest rules across providers. Bucket names, for example, must be DNS compatible and globally unique. Function names have length and character restrictions that vary per cloud. Refer to `designdoc` for details when choosing names.
+
+### Function packaging
+
+`abstract_function` resources expect your code to be packaged in the format required by each cloud (ZIP for AWS and GCP, a function app package for Azure). Ensure the package includes any handler files referenced in the configuration before applying.
